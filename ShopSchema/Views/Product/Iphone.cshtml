@@ -1,19 +1,56 @@
-@page
-@model ShopSchema.Views.Product.Iphone
+@model List<WebApplication1.DB.Models.Product>
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Iphones";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+<!-- List of items -->
 <div>
-    
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        @foreach (var product in Model)
+        {
+            <div class="col">
+                <div class="card h-40">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name.ToUpper()</h5>
+                        <button class="bttn-default bttn-lg bttn-primary">Buy</button>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">@product.Price ₽</small>
+                    </div>
+                </div>
+            </div>
+            
+        }
+    </div>
 </div>
-</body>
-</html>
+
+
+<!-- Message with count -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <div class="rounded me-2">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <strong class="me-auto">DD</strong>
+            <small>@DateTime.UtcNow.ToString("t")</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Total count of items: @Model.Count
+        </div>
+    </div>
+</div>
+
+
+<!-- Script for message -->
+<script>
+const toastLiveExample = document.getElementById('liveToast')
+setTimeout(function(){
+    const toast = new bootstrap.Toast(toastLiveExample)
+    toast.show()
+}, 3000);
+</script>

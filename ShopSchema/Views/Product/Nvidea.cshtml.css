@@ -1,0 +1,9 @@
+.card{
+    border-radius: 20px;
+}
+.card-img-top{
+    border-radius: 15px;
+}
+.card-title{
+    text-align: center;
+}
