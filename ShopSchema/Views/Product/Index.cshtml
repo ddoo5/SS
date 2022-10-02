@@ -1,0 +1,153 @@
+@model List<WebApplication1.DB.Models.Product>
+
+@{
+    ViewData["Title"] = "Items";
+}
+
+
+<!-- Main text -->
+<div class="container">
+  <p class="lead">
+    Select category:
+  </p>
+  
+  <hr/>
+</div>
+
+
+<!-- Items -->
+<div class="card-container">
+  <div class="card-grid">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Dishwashers
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <button class="bttn-stretch bttn-lg bttn-success">Select</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Music
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <button class="bttn-stretch bttn-lg bttn-success">Select</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Tesla
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <button class="bttn-stretch bttn-lg bttn-success">Select</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card-grid">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          MSI
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <button class="bttn-stretch bttn-lg bttn-success">Select</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Nvidea
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <button class="bttn-stretch bttn-lg bttn-success">Select</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Samsung
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <button class="bttn-stretch bttn-lg bttn-success">Select</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card-grid">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Iphone
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <button class="bttn-stretch bttn-lg bttn-success">Select</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Scarlett
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <button class="bttn-stretch bttn-lg bttn-success">Select</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Sony
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <a asp-controller="Product" asp-action="Sony">
+          <button class="bttn-stretch bttn-lg bttn-success">Select</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

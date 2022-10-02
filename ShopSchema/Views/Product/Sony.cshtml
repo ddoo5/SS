@@ -1,0 +1,35 @@
+@model List<WebApplication1.DB.Models.Product>
+
+@{
+    ViewData["Title"] = "Category - Sony";
+}
+
+<div class="container">
+    Count : @Model.Count
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>
+            Price
+        </th>
+        <th>
+            Name
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>
+                @product.Price
+            </td>
+            <td>
+                @product.Name
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

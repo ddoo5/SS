@@ -1,0 +1,28 @@
+/* text */
+.lead{
+    text-align: center;
+    font-size: xx-large;
+}
+
+
+/* items */
+.card-container{
+    position: static;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.card-grid{
+    position: center;
+    display: flex;
+}
+.card{
+    width: 16rem;
+    margin: 4%;
+    border-radius: 23px;
+}
+.card-img-top{
+    border-radius: 16px;
+}
+.buttonInCard{
+    text-align: center;
+}
