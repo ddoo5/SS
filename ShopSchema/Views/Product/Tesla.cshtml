@@ -2,6 +2,13 @@
 
 @{
     ViewData["Title"] = "Tesla";
+    
+    Random rnd = new();
+    string useLink = "";
+    string link1 = "https://c.wallhere.com/photos/a6/80/Tesla_2013_Model_S_netcarshow_netcar_car_images_car_photo-484269.jpg!d";
+    string link2 = "https://avtodream.org/uploads/posts/2021-08/1629182776_tesla-model-y-raskupili-na-god-vpered.jpg";
+    string link3 = "https://c.wallhere.com/photos/84/5b/Tesla_2012_Model_S_alpha_netcarshow_netcar_car_images_car_photo-484297.jpg!d";
+    string link4 = "https://funart.pro/uploads/posts/2021-04/1618361108_18-funart_pro-p-elektrokar-tesla-mashini-krasivo-foto-20.jpg";
 }
 
 
@@ -10,9 +17,17 @@
     <div class="row row-cols-1 row-cols-md-4 g-4">
         @foreach (var product in Model)
         {
+            if (rnd.Next(1, 5) == 1)
+                useLink = link1;
+            if (rnd.Next(1, 5) == 2)
+                useLink = link2;
+            if (rnd.Next(1, 5) == 3)
+                useLink = link3;
+            if (rnd.Next(1, 5) == 4)
+                useLink = link4;
             <div class="col">
                 <div class="card h-40">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="@useLink" class="card-img-top" alt="tsl"/>
                     <div class="card-body">
                         <h5 class="card-title">@product.Name.ToUpper()</h5>
                         <button class="bttn-default bttn-lg bttn-primary">Buy</button>
