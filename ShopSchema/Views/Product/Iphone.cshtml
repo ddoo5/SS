@@ -2,6 +2,14 @@
 
 @{
     ViewData["Title"] = "Iphones";
+    
+    Random rnd = new();
+    string useLink = "";
+    string link1 = "https://mobilguru.by/image/cache/catalog/apple/336/appleiphone13mini/apple_iphone_13_mini_33-730x1000.jpg";
+    string link2 = "https://megamir.by/image/cache/catalog/apple/appleiphone13pro/apple_iphone_13_pro_111-1200x800.jpg";
+    string link3 = "https://istudio.su/wa-data/public/shop/products/31/65/16531/images/29120/29120.970x0.jpg";
+    string link4 = "https://priceinall.com/wp-content/uploads/2020/10/apple-iphone-12-4.jpg";
+}
 }
 
 
@@ -10,9 +18,18 @@
     <div class="row row-cols-1 row-cols-md-4 g-4">
         @foreach (var product in Model)
         {
+            if (rnd.Next(1, 5) == 1)
+                useLink = link1;
+            if (rnd.Next(1, 5) == 2)
+                useLink = link2;
+            if (rnd.Next(1, 5) == 3)
+                useLink = link3;
+            if (rnd.Next(1, 5) == 4)
+                useLink = link4;
+            
             <div class="col">
                 <div class="card h-40">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="@useLink" class="card-img-top" alt="iphn">
                     <div class="card-body">
                         <h5 class="card-title">@product.Name.ToUpper()</h5>
                         <button class="bttn-default bttn-lg bttn-primary">Buy</button>

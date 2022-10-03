@@ -2,6 +2,13 @@
 
 @{
     ViewData["Title"] = "Music albums";
+    
+    Random rnd = new();
+    string useLink = "";
+    string link1 = "";
+    string link2 = "";
+    string link3 = "";
+    string link4 = "";
 }
 
 
@@ -10,6 +17,15 @@
     <div class="row row-cols-1 row-cols-md-4 g-4">
         @foreach (var product in Model)
         {
+            if (rnd.Next(1, 5) == 1)
+                useLink = link1;
+            if (rnd.Next(1, 5) == 2)
+                useLink = link2;
+            if (rnd.Next(1, 5) == 3)
+                useLink = link3;
+            if (rnd.Next(1, 5) == 4)
+                useLink = link4;
+            
             <div class="col">
                 <div class="card h-40">
                     <img src="..." class="card-img-top" alt="...">

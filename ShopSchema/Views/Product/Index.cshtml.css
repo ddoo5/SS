@@ -21,7 +21,8 @@
     border-radius: 23px;
 }
 .card-img-top{
-    border-radius: 16px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
 }
 .buttonInCard{
     text-align: center;
