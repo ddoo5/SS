@@ -1,5 +1,10 @@
+@using WebApplication1.HelperServices
+@model List<WebApplication1.DB.Models.Product>
+
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Welcome!";
+    
+    string useLink = "";
 }
 
 
@@ -37,11 +42,15 @@
     </div>
 </div>
 
+<br/>
+<br/>
+<br/>
+
 
 <!-- text -->
 <div class="TextBlock">
     <div data-aos="fade-up" data-aos-duration="2000">
-                <h3>Lorem ipsum dolor</h3>
+        <h3>Lorem ipsum dolor</h3>
     </div>
     <div data-aos="fade-up" data-aos-duration="3000">
         <p class="Maintext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -50,4 +59,63 @@
     <div data-aos="fade-up" data-aos-duration="3000">
         <p class="Maintext">Eget felis eget nunc lobortis mattis aliquam faucibus purus in. At elementum eu facilisis sed. Amet facilisis magna etiam tempor orci. Quam quisque id diam vel quam elementum pulvinar. Ut diam quam nulla porttitor massa id neque aliquam vestibulum. Diam in arcu cursus euismod quis viverra nibh. Eget sit amet tellus cras adipiscing enim eu. Neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing. In nibh mauris cursus mattis molestie a iaculis at. Ultrices eros in cursus turpis massa tincidunt dui ut. Feugiat nisl pretium fusce id velit ut.Consectetur purus ut faucibus pulvinar. Urna id volutpat lacus laoreet non curabitur gravida. Libero id faucibus nisl tincidunt. In egestas erat imperdiet sed euismod nisi porta. Platea dictumst quisque sagittis purus sit amet volutpat consequat mauris. Bibendum est ultricies integer quis auctor. Tempor commodo ullamcorper a lacus vestibulum. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Neque gravida in fermentum et sollicitudin. Id velit ut tortor pretium viverra suspendisse potenti nullam ac. Imperdiet massa tincidunt nunc pulvinar sapien. Egestas erat imperdiet sed euismod nisi porta. Orci eu lobortis elementum nibh tellus molestie nunc non blandit. Nisi est sit amet facilisis magna etiam tempor orci eu. Sit amet tellus cras adipiscing enim eu turpis. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit. Donec ultrices tincidunt arcu non sodales. Interdum posuere lorem ipsum dolor sit.Mauris nunc congue nisi vitae suscipit tellus. Placerat in egestas erat imperdiet. Velit aliquet sagittis id consectetur purus ut faucibus pulvinar. Nullam non nisi est sit amet facilisis magna. Praesent elementum facilisis leo vel fringilla. Auctor augue mauris augue neque gravida in fermentum et. In iaculis nunc sed augue. Rhoncus dolor purus non enim. Nisl pretium fusce id velit ut tortor pretium viverra. Consequat ac felis donec et. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Morbi leo urna molestie at elementum. At elementum eu facilisis sed. Lorem ipsum dolor sit amet. In hendrerit gravida rutrum quisque non tellus orci. Amet massa vitae tortor condimentum. Vitae elementum curabitur vitae nunc sed velit dignissim sodales.</p>
     </div>
+</div>
+
+<br/>
+<br/>
+
+
+<!-- items example -->
+<div class="BlockForItems">
+    <div class="viewItems">
+        <div class="Arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <div class="linkOnOrder">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">
+                <p class="MaintextView">View products</p>
+            </a>
+        </div>
+    </div>
+
+    <hr/>
+    
+    <div class="Items">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            @foreach (var product in Model)
+            {
+                if (product.Name == NameList.dishwasher.ToString())
+                    useLink = "https://ars.repair/wp-content/uploads/2020/06/dishwasher.jpg";
+                if (product.Name == NameList.Iphone.ToString())
+                    useLink = "https://priceinall.com/wp-content/uploads/2020/10/apple-iphone-12-4.jpg";
+                if (product.Name == NameList.MSI.ToString())
+                    useLink = "https://global-img.gamergen.com/msi-tridentx_0190000000909316.png";
+                if (product.Name == NameList.MoonlightSonata_Beethoven_in_B_minor.ToString())
+                    useLink = "https://avatars.yandex.net/get-music-content/99892/4b063d26.a.5002278-1/300x300";
+                if (product.Name == NameList.GTX_1080.ToString())
+                    useLink = "https://i.ebayimg.com/images/g/YiAAAOSw2KRiJ3i4/s-l400.jpg";
+                if (product.Name == NameList.Samsung.ToString())
+                    useLink = "https://unlogo-img.tvc-mall.com/logo/101217574G.jpg";
+                if (product.Name == NameList.Scarlett_comfort.ToString())
+                    useLink = "https://tehnoteca.ru/img/693/692278/scarlett_sc_ah986e03_1.jpg";
+                if (product.Name == NameList.Tesla.ToString())
+                    useLink = "https://www.ixbt.com/img/n1/news/2021/2/4/2021-Tesla-Model-3_large.jpg";
+                if (product.Name == NameList.Sony_ps4.ToString())
+                    useLink = "https://i.ebayimg.com/images/g/irMAAOSwFl5Zjx53/s-l1600.jpg";
+
+                <div class="col">
+                    <div class="card h-40">
+                        <img src="@useLink" class="card-img-top" alt="item">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name.ToUpper()</h5>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">@product.Price ₽</small>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <br/>
 </div>

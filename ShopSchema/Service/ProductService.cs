@@ -54,6 +54,18 @@ public class ProductService : IProductService
     {
         return _connection.Products.Where(x => x.Name == itemName).ToList();
     }
+    
+    
+    public IEnumerable<Product> SelectFourItems()
+    {
+        Random rnd = new();
+        
+        return _connection.Products
+                .Skip(rnd.Next(1,4))
+                .Take(rnd.Next(5,9))
+                .Where(x => x.Id != null)
+                .ToList();
+    }
 
 
     public void CreateReport(string buyer, IProductReportGenerator reportGenerator, ProductGeneratorModel catalog, string reportFileName)

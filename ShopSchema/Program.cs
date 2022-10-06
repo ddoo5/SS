@@ -21,9 +21,22 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>(
+    opt =>
+    {
+        opt.Password.RequireDigit = true;
+        opt.Password.RequiredLength = 8;
+        opt.Password.RequireUppercase = true;
+        opt.Password.RequiredUniqueChars = 1;
+        opt.Lockout.MaxFailedAccessAttempts = 5;
+        opt.User.RequireUniqueEmail = true;
+        opt.SignIn.RequireConfirmedEmail = false;
+
+    })
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 #endregion
 

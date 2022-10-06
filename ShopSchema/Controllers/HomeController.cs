@@ -1,21 +1,27 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ShopSchema.Models;
+using WebApplication1.Services.Models;
 
 namespace ShopSchema.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly IProductService _service;
 
-    public HomeController(ILogger<HomeController> logger)
+    #region Constructor
+    
+    public HomeController(IProductService service)
     {
-        _logger = logger;
+        _service = service;
     }
+    
+    #endregion
 
     public IActionResult Index()
     {
-        return View();
+        var collection = _service.SelectFourItems().ToList();
+        return View(collection);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

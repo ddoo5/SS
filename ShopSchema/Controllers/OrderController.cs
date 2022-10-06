@@ -1,20 +1,24 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ShopSchema.Controllers;
 
 public class OrderController : Controller
 {
-    // GET
+    [Authorize]
     public IActionResult Index()
     {
         return View();
     }
     
+    [Authorize]
     public IActionResult Create()
     {
         return View();
     }
     
+    [Authorize]
     public IActionResult Delete()
     {
         return View();
