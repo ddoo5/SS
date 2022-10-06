@@ -1,3 +1,4 @@
+@using WebApplication1.DB.Models
 @model List<WebApplication1.DB.Models.Product>
 
 @{
@@ -5,10 +6,10 @@
     
     Random rnd = new();
     string useLink = "";
-    string link1 = "";
-    string link2 = "";
-    string link3 = "";
-    string link4 = "";
+    string link1 = "https://propianino.ru/wp-content/uploads/2013/04/beethoven-moonlight-sonata-300x300.jpg";
+    string link2 = "https://www.notediscover.com/art/track/ludwig-van-beethoven-minuet-in-g-32548.jpg";
+    string link3 = "https://avatars.yandex.net/get-music-content/99892/4b063d26.a.5002278-1/300x300";
+    string link4 = "https://avatars.mds.yandex.net/get-marketpic/1627430/market_qqI3lQCApJX7PmUF4Q8Miw/300x300";
 }
 
 
@@ -25,10 +26,10 @@
                 useLink = link3;
             if (rnd.Next(1, 5) == 4)
                 useLink = link4;
-            
+
             <div class="col">
                 <div class="card h-40">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="@useLink" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">@product.Name.ToUpper()</h5>
                         <button class="bttn-default bttn-lg bttn-primary">Buy</button>
