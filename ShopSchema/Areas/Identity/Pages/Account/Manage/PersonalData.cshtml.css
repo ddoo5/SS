@@ -1,0 +1,4 @@
+#registerSubmitButton{
+    display: flex;
+    justify-content: space-between;
+}

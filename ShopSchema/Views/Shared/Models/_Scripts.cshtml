@@ -16,7 +16,31 @@
 
 <script>
       new TypeIt("#AnimatedTextLogin", {
-        strings: "Log in. ",
+        strings: "Log in ",
+      }).go();
+</script>
+
+<script>
+      new TypeIt("#AnimatedTextForgotPass", {
+        strings: "Enter your email. ",
+      }).go();
+</script>
+
+<script>
+      new TypeIt("#AnimatedTextForgotPassConf", {
+        strings: "Please check your email to reset your password. ",
+      }).go();
+</script>
+
+<script>
+      new TypeIt("#AnimatedTextResendEmailConf", {
+        strings: "Enter your email. ",
+      }).go();
+</script>
+
+<script>
+      new TypeIt("#AnimatedTextChangeAccountSettings", {
+        strings: "Change your account settings ",
       }).go();
 </script>
 
@@ -56,6 +80,160 @@ var cleave = new Cleave('.phoneEnter', {
     darkmode.showWidget();
   }
   window.addEventListener('load', addDarkmodeWidget);
+</script>
+
+<script>
+import * as React from 'react';
+import { styled } from 'lib/mui/node_modules/mui/material/styles';
+import Box from 'lib/mui/node_modules/mui/material/Box';
+import List from 'lib/mui/node_modules/mui/material/List';
+import ListItem from 'lib/mui/node_modules/mui/material/ListItem';
+import ListItemAvatar from 'lib/mui/node_modules/mui/material/ListItemAvatar';
+import ListItemIcon from 'lib/mui/node_modules/mui/material/ListItemIcon';
+import ListItemText from 'lib/mui/node_modules/mui/material/ListItemText';
+import Avatar from 'lib/mui/node_modules/mui/material/Avatar';
+import IconButton from 'lib/mui/node_modules/mui/material/IconButton';
+import FormGroup from 'lib/mui/node_modules/mui/material/FormGroup';
+import FormControlLabel from 'lib/mui/node_modules/mui/material/FormControlLabel';
+import Checkbox from 'lib/mui/node_modules/mui/material/Checkbox';
+import Grid from 'lib/mui/node_modules/mui/material/Grid';
+import Typography from 'lib/mui/node_modules/mui/material/Typography';
+import FolderIcon from 'lib/mui/node_modules/mui/icons-material/Folder';
+import DeleteIcon from 'lib/mui/node_modules/mui/icons-material/Delete';
+
+var element = document.querySelector('.Testss')
+function generate(element) {
+  return [0, 1, 2].map((value) =>
+    React.cloneElement(element, {
+      key: value,
+    }),
+  );
+}
+
+const Demo = styled('div')(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+}));
+
+export default function InteractiveList() {
+  const [dense, setDense] = React.useState(false);
+  const [secondary, setSecondary] = React.useState(false);
+
+  return (
+    <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+      <FormGroup row>
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={dense}
+              onChange={(event) => setDense(event.target.checked)}
+            />
+          }
+          label="Enable dense"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={secondary}
+              onChange={(event) => setSecondary(event.target.checked)}
+            />
+          }
+          label="Enable secondary text"
+        />
+      </FormGroup>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>
+          <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+            Text only
+          </Typography>
+          <Demo>
+            <List dense={dense}>
+              {generate(
+                <ListItem>
+                  <ListItemText
+                    primary="Single-line item"
+                    secondary={secondary ? 'Secondary text' : null}
+                  />
+                </ListItem>,
+              )}
+            </List>
+          </Demo>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+            Icon with text
+          </Typography>
+          <Demo>
+            <List dense={dense}>
+              {generate(
+                <ListItem>
+                  <ListItemIcon>
+                    <FolderIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Single-line item"
+                    secondary={secondary ? 'Secondary text' : null}
+                  />
+                </ListItem>,
+              )}
+            </List>
+          </Demo>
+        </Grid>
+      </Grid>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>
+          <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+            Avatar with text
+          </Typography>
+          <Demo>
+            <List dense={dense}>
+              {generate(
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <FolderIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Single-line item"
+                    secondary={secondary ? 'Secondary text' : null}
+                  />
+                </ListItem>,
+              )}
+            </List>
+          </Demo>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+            Avatar with text and icon
+          </Typography>
+          <Demo>
+            <List dense={dense}>
+              {generate(
+                <ListItem
+                  secondaryAction={
+                    <IconButton edge="end" aria-label="delete">
+                      <DeleteIcon />
+                    </IconButton>
+                  }
+                >
+                  <ListItemAvatar>
+                    <Avatar>
+                      <FolderIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Single-line item"
+                    secondary={secondary ? 'Secondary text' : null}
+                  />
+                </ListItem>,
+              )}
+            </List>
+          </Demo>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+}
 </script>
 
 <script src="~/js/site.js" asp-append-version="true"></script>
