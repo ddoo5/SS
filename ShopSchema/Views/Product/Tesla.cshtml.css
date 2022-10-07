@@ -8,3 +8,10 @@
 .card-title{
     text-align: center;
 }
+.CardButtonBlock{
+    display: flex;
+    justify-content: center;
+}
+button{
+    width: 10rem;
+}

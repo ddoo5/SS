@@ -31,9 +31,11 @@
                     <img src="@useLink" class="card-img-top" alt="dishwash">
                     <div class="card-body">
                         <h5 class="card-title">@product.Name.ToUpper()</h5>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">
-                                        <button class="bttn-default bttn-lg bttn-primary">Buy</button>
-                                    </a>
+                        <div class="CardButtonBlock">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">
+                                <button class="bttn-unite bttn-md bttn-primary">Buy</button>
+                            </a>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">@product.Price ₽</small>
