@@ -50,7 +50,7 @@
                     <div class="card-body">
                         <h5 class="card-title">@product.Name.ToUpper()</h5>
                         <div class="CardButtonBlock">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index" asp-route-billNumber="0" asp-route-buyerName="@User.Identity.Name" asp-route-productName="@product.Name" asp-route-price="@product.Price">
                                 <button class="bttn-unite bttn-md bttn-primary">Buy</button>
                             </a>
                         </div>

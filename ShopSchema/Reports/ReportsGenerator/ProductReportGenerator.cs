@@ -68,7 +68,7 @@ namespace WebApplication1.Reports.Class
                 new FieldContent(_FieldProductName, product.Name.ToString()),
             })).ToArray();
 
-            var img = File.ReadAllBytes("../WebApplication1/Reports/Template/logo/logo.png");
+            var img = File.ReadAllBytes("../ShopSchema/Reports/Template/logo/logo.png");
 
             var content = new Content(
                 new FieldContent(_FieldCompanyName, CompanyName),

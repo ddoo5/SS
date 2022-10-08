@@ -10,6 +10,8 @@ public interface IProductService
 
     IEnumerable<Product> SelectAll(string itemName);
 
+    IEnumerable<Product> SelectItem(string itemName, int price);
+
     IEnumerable<Product> SelectFourItems();
 
     void CreateReport(string buyer, IProductReportGenerator reportGenerator, ProductGeneratorModel catalog,

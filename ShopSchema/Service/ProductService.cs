@@ -56,6 +56,12 @@ public class ProductService : IProductService
     }
     
     
+    public IEnumerable<Product> SelectItem(string itemName, int price)
+    {
+        return _connection.Products.Where(x => x.Name == itemName && x.Price == price).ToList();
+    }
+    
+    
     public IEnumerable<Product> SelectFourItems()
     {
         Random rnd = new();
