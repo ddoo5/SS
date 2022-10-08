@@ -600,8 +600,4 @@
       <_ContentIncludedByDefault Remove="wwwroot\lib\cleave.js-1.6.0\yarn.lock" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="wwwroot\lib\mui" />
-    </ItemGroup>
-
 </Project>

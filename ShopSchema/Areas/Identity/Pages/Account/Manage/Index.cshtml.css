@@ -1,0 +1,22 @@
+.col-md-6{
+    width: 35rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+}
+.form-floating{
+    margin: 2rem;
+}
+#registerSubmitButton{
+    display: flex;
+    justify-content: center;
+}
+#registerSubmit{
+    width: 50rem;
+}
+.bttn-fill{
+    width: 10rem;
+}
+h3{
+    text-align: center;
+}
