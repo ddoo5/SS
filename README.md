@@ -7,6 +7,25 @@ You can download, change and use it, i tried to comment every piece of code.
 
 ![](https://github.com/ddoo5/SS/blob/data/data/IndexPage.gif)
 
+
 ```Product```
 
 ![](https://github.com/ddoo5/SS/blob/data/data/ProductPage.gif)
+
+
+```Register```
+
+![]()
+
+
+```Login```
+
+![]()
+
+
+```Profile```
+
+![]()
+
+
+# Examples
