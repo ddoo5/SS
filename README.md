@@ -36,3 +36,8 @@ _All data - fake!_
 ```Product - Iphone```
 
 ![](https://github.com/ddoo5/SS/blob/data/data/ProductExamplePage.gif)
+
+
+```Bill```
+
+![](https://github.com/ddoo5/SS/blob/data/data/BillExample.png)
