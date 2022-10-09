@@ -1,7 +1,7 @@
 # What is that?
-That's free schema for online shop.
+That's free schema, which based on ASP.Net Web-app technology, for online shop.
 
-You can download, change and use it, i tried to comment every piece of code. 
+You can download, change and use it, i tried to comment every piece of code.
 
 # Pages
 ```Index```
@@ -40,7 +40,7 @@ _All data - fake!_
 
 ```Order - Samsung```
 
-![]()
+![](https://github.com/ddoo5/SS/blob/data/data/OrderExample.gif)
 
 
 ```Bill```
