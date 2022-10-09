@@ -3,8 +3,6 @@ That's free schema for online shop.
 
 You can download, change and use it, i tried to comment every piece of code. 
 
-_All data - fake!_
-
 # Pages
 ```Index```
 
@@ -18,7 +16,7 @@ _All data - fake!_
 
 ```Register```
 
-![]()
+![](https://github.com/ddoo5/SS/blob/data/data/RegisterPage.gif)
 
 
 ```Login```
@@ -32,6 +30,9 @@ _All data - fake!_
 
 
 # Examples
+_All data - fake!_
+
+
 ```Product - Iphone```
 
 ![](https://github.com/ddoo5/SS/blob/data/data/ProductExamplePage.gif)
