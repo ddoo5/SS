@@ -74,7 +74,7 @@ public class ProductService : IProductService
     }
 
 
-    public void CreateReport(string buyer, IProductReportGenerator reportGenerator, ProductGeneratorModel catalog, string reportFileName)
+    public void CreateReport(string buyer, IProductReportGenerator reportGenerator, ProductGeneratorModel catalog, string reportFileName, int billNumber)
     {
         reportGenerator.CompanyName = catalog.Name;
         reportGenerator.BillNumber = catalog.Bill;
@@ -83,7 +83,7 @@ public class ProductService : IProductService
         reportGenerator.BuyerName = buyer;
         reportGenerator.Products = catalog.Products.Select(product => (product.Id, product.Name, product.Category, product.Price));
 
-        FileInfo reportFileInfo = reportGenerator.Create(reportFileName);
+        FileInfo reportFileInfo = reportGenerator.Create(reportFileName, billNumber);
     }
 
     #endregion

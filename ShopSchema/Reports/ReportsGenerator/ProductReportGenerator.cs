@@ -50,7 +50,7 @@ namespace WebApplication1.Reports.Class
 
         #region methods
 
-        public FileInfo Create(string reportFilePath)
+        public FileInfo Create(string reportFilePath, int billNumber)
         {
             if (!_template.Exists)
                 throw new FileNotFoundException();
@@ -73,7 +73,7 @@ namespace WebApplication1.Reports.Class
             var content = new Content(
                 new FieldContent(_FieldCompanyName, CompanyName),
                 new FieldContent(_FieldDateOfCreation, Date.ToString("dd.MM.yyyy")),
-                new FieldContent(_FieldNumberOfBill, "1"),
+                new FieldContent(_FieldNumberOfBill, billNumber.ToString()),
                 new FieldContent(_FieldBuyerName, BuyerName),
                 new FieldContent(_FieldCompanyAddres, CompanyAddres),
                 new FieldContent(_FieldCompanyName, CompanyName),

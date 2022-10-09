@@ -15,5 +15,5 @@ public interface IProductService
     IEnumerable<Product> SelectFourItems();
 
     void CreateReport(string buyer, IProductReportGenerator reportGenerator, ProductGeneratorModel catalog,
-        string reportFileName);
+        string reportFileName, int billNumber);
 }

@@ -23,6 +23,10 @@ public class OrderController : Controller
     public IActionResult Index(int billNumber, string buyerName, string productName, int price)
     {
         CartKeep keep = new CartKeep();
+        Random rnd = new();
+        if (billNumber == 0)
+            billNumber = rnd.Next(1, 999);
+        
         keep.Bill = billNumber;
         keep.Buyer = buyerName;
         keep.Product = productName;
@@ -36,9 +40,7 @@ public class OrderController : Controller
     public IActionResult Create(int billNumber, string buyerName, string productName, int price)
     {
         IProductReportGenerator report = new ProductReportGenerator("Reports/Template/WaterTemplate.docx");
-        Random rnd = new();
-        if (billNumber == 0)
-            billNumber = rnd.Next(1, 999);
+
         var catalog = new ProductGeneratorModel
         {
             Name = "LLC Local Company",
@@ -47,8 +49,12 @@ public class OrderController : Controller
             Products = _service.SelectItem(productName, price)
         };
             
-        _service.CreateReport(buyerName, report, catalog, $"Reports/Generated/{billNumber}_Bill.docx");
+        _service.CreateReport(buyerName, report, catalog, $"Reports/Generated/{billNumber}_Bill.docx", billNumber);
+
+        byte[] fileBytes = System.IO.File.ReadAllBytes($"Reports/Generated/{billNumber}_Bill.docx");
         
-        return View();
+        System.IO.File.Delete($"Reports/Generated/{billNumber}_Bill.docx");
+
+        return File(fileBytes, "application/octet-stream", $"{billNumber}.docx");
     }
 }
