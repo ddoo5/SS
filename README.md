@@ -21,7 +21,7 @@ You can download, change and use it, i tried to comment every piece of code.
 
 ```Login```
 
-![]()
+![](https://github.com/ddoo5/SS/blob/data/data/LoginPage.gif)
 
 
 ```Profile```
