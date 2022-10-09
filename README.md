@@ -29,6 +29,6 @@ You can download, change and use it, i tried to comment every piece of code.
 
 
 # Examples
-```Product```
+```Product - Iphone```
 
 ![](https://github.com/ddoo5/SS/blob/data/data/ProductExamplePage.gif)
