@@ -1,0 +1,17 @@
+.card{
+    border-radius: 20px;
+}
+.card-img-top{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.card-title{
+    text-align: center;
+}
+.CardButtonBlock{
+    display: flex;
+    justify-content: center;
+}
+button{
+    width: 10rem;
+}

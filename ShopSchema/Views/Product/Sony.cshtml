@@ -1,0 +1,75 @@
+@model List<WebApplication1.DB.Models.Product>
+
+@{
+    ViewData["Title"] = "Sony";
+    
+    Random rnd = new();
+    string useLink = "";
+    string link1 = "https://i.ebayimg.com/images/g/QvQAAOSw2kleQyjp/s-l600.jpg";
+    string link2 = "https://iwbm.ru/image/cache/catalog/PS4/ps4-pro-fortnite-800x800.jpg";
+    string link3 = "https://i.ebayimg.com/images/g/irMAAOSwFl5Zjx53/s-l1600.jpg";
+    string link4 = "https://arendamaniya.by/wp-content/uploads/2018/08/MExrLA4BaT.png";
+}
+
+
+<!-- List of items -->
+<div>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        @foreach (var product in Model)
+        {
+            if (rnd.Next(1, 5) == 1)
+                useLink = link1;
+            if (rnd.Next(1, 5) == 2)
+                useLink = link2;
+            if (rnd.Next(1, 5) == 3)
+                useLink = link3;
+            if (rnd.Next(1, 5) == 4)
+                useLink = link4;
+            
+            <div class="col">
+                <div class="card h-40">
+                    <img src="@useLink" class="card-img-top" alt="dishwash">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name.ToUpper()</h5>
+                        <div class="CardButtonBlock">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index" asp-route-billNumber="0" asp-route-buyerName="@User.Identity.Name" asp-route-productName="@product.Name" asp-route-price="@product.Price">
+                                <button class="bttn-unite bttn-md bttn-primary">Buy</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">@product.Price ₽</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+<!-- Message with count -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <div class="rounded me-2">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <strong class="me-auto">DD</strong>
+            <small>@DateTime.UtcNow.ToString("t")</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Total count of items: @Model.Count
+        </div>
+    </div>
+</div>
+
+
+<!-- Script for message -->
+<script>
+const toastLiveExample = document.getElementById('liveToast')
+setTimeout(function(){
+    const toast = new bootstrap.Toast(toastLiveExample)
+    toast.show()
+}, 3000);
+</script>

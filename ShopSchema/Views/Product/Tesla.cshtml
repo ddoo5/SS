@@ -1,0 +1,93 @@
+@model List<WebApplication1.DB.Models.Product>
+
+@{
+    ViewData["Title"] = "Tesla";
+    
+    Random rnd = new();
+    string useLink = "";
+    string link1 = "https://c.wallhere.com/photos/a6/80/Tesla_2013_Model_S_netcarshow_netcar_car_images_car_photo-484269.jpg!d";
+    string link2 = "https://avtodream.org/uploads/posts/2021-08/1629182776_tesla-model-y-raskupili-na-god-vpered.jpg";
+    string link3 = "https://c.wallhere.com/photos/84/5b/Tesla_2012_Model_S_alpha_netcarshow_netcar_car_images_car_photo-484297.jpg!d";
+    string link4 = "https://funart.pro/uploads/posts/2021-04/1618361108_18-funart_pro-p-elektrokar-tesla-mashini-krasivo-foto-20.jpg";
+    string link5 = "https://res.cloudinary.com/dvgm7zmup/image/upload/ada8bzgxrtg54zhoybvx.jpg";
+    string link6 = "https://fikiwiki.com/uploads/posts/2022-02/1644827707_20-fikiwiki-com-p-tesla-krasivie-kartinki-23.jpg";
+    string link7 = "https://fikiwiki.com/uploads/posts/2022-02/1644827744_49-fikiwiki-com-p-tesla-krasivie-kartinki-55.jpg";
+    string link8 = "https://a.d-cd.net/FSAAAgNFiOA-1920.jpg";
+    string link9 = "https://catherineasquithgallery.com/uploads/posts/2021-03/1615819159_40-p-fon-tesla-50.jpg";
+    string link10 = "https://www.ixbt.com/img/n1/news/2021/2/4/2021-Tesla-Model-3_large.jpg";
+}
+
+
+<!-- List of items -->
+<div>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        @foreach (var product in Model)
+        {
+            if (rnd.Next(1, 11) == 1)
+                useLink = link1;
+            if (rnd.Next(1, 11) == 2)
+                useLink = link2;
+            if (rnd.Next(1, 11) == 3)
+                useLink = link3;
+            if (rnd.Next(1, 11) == 4)
+                useLink = link4;
+            if (rnd.Next(1, 11) == 5)
+                useLink = link5;
+            if (rnd.Next(1, 11) == 6)
+                useLink = link6;
+            if (rnd.Next(1, 11) == 7)
+                useLink = link7;
+            if (rnd.Next(1, 11) == 8)
+                useLink = link8;
+            if (rnd.Next(1, 11) == 9)
+                useLink = link9;
+            if (rnd.Next(1, 11) == 10)
+                useLink = link10;
+            
+            <div class="col">
+                <div class="card h-40">
+                    <img src="@useLink" class="card-img-top" alt="dishwash">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name.ToUpper()</h5>
+                        <div class="CardButtonBlock">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index" asp-route-billNumber="0" asp-route-buyerName="@User.Identity.Name" asp-route-productName="@product.Name" asp-route-price="@product.Price">
+                                <button class="bttn-unite bttn-md bttn-primary">Buy</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">@product.Price ₽</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+<!-- Message with count -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <div class="rounded me-2">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <strong class="me-auto">DD</strong>
+            <small>@DateTime.UtcNow.ToString("t")</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Total count of items: @Model.Count
+        </div>
+    </div>
+</div>
+
+
+<!-- Script for message -->
+<script>
+const toastLiveExample = document.getElementById('liveToast')
+setTimeout(function(){
+    const toast = new bootstrap.Toast(toastLiveExample)
+    toast.show()
+}, 3000);
+</script>

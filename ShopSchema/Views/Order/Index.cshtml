@@ -1,0 +1,33 @@
+@model ShopSchema.Models.CartKeep
+@{
+    ViewData["Title"] = "Create Order";
+}
+
+<h3 style="text-align: center">Your cart: </h3>
+
+<div class="tableOrder">
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Bill number</th>
+            <th scope="col">Buyer</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody class="table-group-divider">
+        <tr>
+            <td>@Model.Product</td>
+            <td>@Model.Price ₽</td>
+            <td>@Model.Bill</td>
+            <td>@Model.Buyer</td>
+            <td>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Create" asp-route-billNumber="@Model.Bill" asp-route-buyerName="@Model.Buyer" asp-route-productName="@Model.Product" asp-route-price="@Model.Price">
+                    <button class="bttn-jelly bttn-sm bttn-success asp-area=">Approve</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

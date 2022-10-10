@@ -1,0 +1,65 @@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/fontawesome-free-6.2.0-web/js/all.min.js"></script>
+<script src="~/lib/validator.js-13.7.0/validator.min.js"></script>
+<script src="~/lib/aos/aos.js"></script>
+<script src="~/lib/typeit/index.umd.js"></script>
+<script src="~/lib/darkmode/darkmode-js.min.js"></script>
+<script src="~/lib/cleave/node_modules/cleave.js/dist/cleave.min.js"></script>
+<script src="~/lib/cleave/node_modules/cleave.js/dist/addons/cleave-phone.ru.js"></script>
+
+<script>
+      new TypeIt("#AnimatedTextRegister", {
+        strings: "Register form. ",
+      }).go();
+</script>
+
+<script>
+      new TypeIt("#AnimatedTextLogin", {
+        strings: "Log in ",
+      }).go();
+</script>
+
+<script>
+      new TypeIt("#AnimatedTextForgotPass", {
+        strings: "Enter your email. ",
+      }).go();
+</script>
+
+<script>
+      new TypeIt("#AnimatedTextForgotPassConf", {
+        strings: "Please check your email to reset your password. ",
+      }).go();
+</script>
+
+<script>
+      new TypeIt("#AnimatedTextResendEmailConf", {
+        strings: "Enter your email. ",
+      }).go();
+</script>
+
+<script>
+      new TypeIt("#AnimatedTextChangeAccountSettings", {
+        strings: "Change your account settings ",
+      }).go();
+</script>
+
+<script>
+import Bricks from 'lib/bricks/bricks.js'
+const instance = Bricks({
+  container: '.col'
+})
+instance.update()
+instance.pack()
+</script>
+
+<script>
+var cleave = new Cleave('.phoneEnter', {
+    phone: true,
+    phoneRegionCode: 'ru'
+});
+</script>
+
+<script>AOS.init();</script>
+
+<script src="~/js/site.js" asp-append-version="true"></script>

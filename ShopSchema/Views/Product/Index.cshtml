@@ -1,0 +1,169 @@
+@model List<WebApplication1.DB.Models.Product>
+
+@{
+    ViewData["Title"] = "Items";
+}
+
+
+<!-- Main text -->
+<div class="container">
+  <p class="lead">
+    Select category:
+  </p>
+  
+  <hr/>
+</div>
+
+
+<!-- Items -->
+<div class="card-container">
+  <div class="card-grid">
+    <div class="card">
+      <img src="https://jumpseller.s3.eu-west-1.amazonaws.com/store/latetera/assets/Apto_para_Lavavajillas_400.jpg" class="card-img-top" alt="dishwasher">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Dishwashers
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <a asp-controller="Product" asp-action="Dishwasher">
+            <button class="bttn-stretch bttn-md bttn-warning">Select</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://avatars.yandex.net/get-music-content/117546/112f3f90.a.6975919-1/400x400" class="card-img-top" alt="beethoven">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Music
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <a asp-controller="Product" asp-action="Music">
+          <button class="bttn-stretch bttn-md bttn-warning">Select</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://i.pinimg.com/originals/43/e9/69/43e969979dfd8ae4b364f517571aee58.png" class="card-img-top" alt="tesla">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Tesla
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <a asp-controller="Product" asp-action="Tesla">
+          <button class="bttn-stretch bttn-md bttn-warning">Select</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card-grid">
+    <div class="card">
+      <img src="https://www.mignatis.com/image/cache/catalog/Sticker/msi-logo-sticker-etiket-pc-tablet-laptop-yapistirma-400x400.png" class="card-img-top" alt="msi">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          MSI
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <a asp-controller="Product" asp-action="MSI">
+          <button class="bttn-stretch bttn-md bttn-warning">Select</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <img src="https://xgtechstore.com/wp-content/uploads/2022/04/nvidia.webp" class="card-img-top" alt="nvidea">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Nvidea
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <a asp-controller="Product" asp-action="Nvidea">
+          <button class="bttn-stretch bttn-md bttn-warning">Select</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <img src="https://www.ifix.co.il/wp-content/uploads/2021/04/sam-b.png" class="card-img-top" alt="samsung">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Samsung
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <a asp-controller="Product" asp-action="Samsung">
+          <button class="bttn-stretch bttn-md bttn-warning">Select</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card-grid">
+    <div class="card">
+      <img src="https://sun6-22.userapi.com/s/v1/if1/VaeX40OrWZpO86Feuqhv01_h2KcSRO7RQ8H3eR-3nXgHhGWu64dmnZ2xPGQAvU4ZaETfB3qE.jpg?size=400x400&quality=96&crop=0,0,400,400&ava=1" class="card-img-top" alt="iphone">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Iphone
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <a asp-controller="Product" asp-action="Iphone">
+          <button class="bttn-stretch bttn-md bttn-warning">Select</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <img src="https://technolider.com/upload/iblock/97f/logo.png" class="card-img-top" alt="scarlett">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Scarlett
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <a asp-controller="Product" asp-action="Scarlett">
+          <button class="bttn-stretch bttn-md bttn-warning">Select</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card">
+      <img src="https://blockbustermall.com.ua/images/bb1/Stuff/sony/imgsony.png" class="card-img-top" alt="sony">
+      <div class="card-img-overlay">
+        <h6 class="card-title"><p class="lead" style="font-size: small">
+          Sony
+        </p></h6>
+      </div>
+      <div class="card-body">
+        <div class="buttonInCard">
+          <a asp-controller="Product" asp-action="Sony">
+            <button class="bttn-stretch bttn-md bttn-warning">Select</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
