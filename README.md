@@ -3,7 +3,7 @@ That's free schema, which based on ASP.Net Web-app technology, for online shop.
 
 All data was generated randomly, pictures i took from the Internet(local copy saved in img).
 
-You can download, change and use it, i tried to comment every piece of code.
+You can download, change and use it.
 
 # Pages
 ```Index```
